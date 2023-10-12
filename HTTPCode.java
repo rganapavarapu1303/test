@@ -13,7 +13,7 @@ public class HTTPCode {
     private static String NAME = "SAI";
     //private static final String GET_URL = "http://ec2-3-12-148-182.us-east-2.compute.amazonaws.com:8090/controller/rest/serverstatus";
 
-    public static String greet(String name){
+    public static String sample(String name){
 
        try {
             sendHTTPRequest();
@@ -24,7 +24,7 @@ public class HTTPCode {
     }
 
     public static void sendHTTPRequest() throws IOException {
-        URL url = new URL("TEST_HTTP_1");
+        URL url = new URL("https://www.google.com/humans.txt");
         URLConnection uc = url.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
 
@@ -41,7 +41,7 @@ public class HTTPCode {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss zzzz", Locale.getDefault());
         for(int i=0; ; i++){
             Date date = new Date();
-            System.out.println(dateFormat.format(date) + "   " + greet(NAME));
+            System.out.println(dateFormat.format(date) + "   " + sample(NAME));
         }
 
     }
